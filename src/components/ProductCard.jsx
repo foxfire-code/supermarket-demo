@@ -1,13 +1,21 @@
 import React from 'react';
 import { ShoppingCart, Star } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   const handleAddToCart = (e) => {
     e.preventDefault();
+    if (!user) {
+      alert('Please register or login to add items to cart!');
+      navigate('/login');
+      return;
+    }
     addToCart(product);
     alert(`${product.name} added to cart!`);
   };
@@ -15,7 +23,6 @@ export default function ProductCard({ product }) {
   return (
     <Link to={`/product/${product.id}`}>
       <div className="bg-white rounded-lg shadow hover:shadow-xl transition overflow-hidden cursor-pointer h-full">
-        {/* Image */}
         <div className="relative overflow-hidden bg-gray-200 h-48">
           <img
             src={product.image}
@@ -28,28 +35,18 @@ export default function ProductCard({ product }) {
             </div>
           )}
         </div>
-
-        {/* Content */}
         <div className="p-4">
           <p className="text-xs text-gray-500 uppercase font-semibold">{product.category}</p>
           <h3 className="font-bold text-lg mt-1 line-clamp-2">{product.name}</h3>
-          
-          {/* Rating */}
           <div className="flex items-center mt-2 space-x-1">
             <Star size={14} className="fill-yellow-400 text-yellow-400" />
             <span className="text-sm font-semibold">{product.rating}</span>
             <span className="text-xs text-gray-500">({product.rating})</span>
           </div>
-
-          {/* Price */}
           <div className="mt-3 flex items-baseline space-x-2">
             <span className="text-2xl font-bold text-primary">₦{product.price.toLocaleString()}</span>
           </div>
-
-          {/* Stock */}
           <p className="text-xs text-gray-600 mt-2">{product.stock} in stock</p>
-
-          {/* Add to Cart Button */}
           <button
             onClick={handleAddToCart}
             className="w-full mt-4 bg-accent text-white py-2 rounded hover:bg-red-600 transition flex items-center justify-center space-x-2 font-semibold"
