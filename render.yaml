@@ -1,0 +1,11 @@
+services:
+  - type: static_site
+    name: supermarket-demo
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_WHATSAPP_NUMBER
+        value: 09162123734
+      - key: VITE_STORE_NAME
+        value: SuperMarket Demo
