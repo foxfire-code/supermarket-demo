@@ -9,9 +9,9 @@ export const products = [
   { id: 8, name: 'Wireless Earbuds', category: 'Electronics', price: 4200, image: 'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?w=400&h=400&fit=crop', description: 'Bluetooth 5.0 wireless earbuds with case', stock: 8, rating: 3.8 },
   { id: 9, name: 'Screen Protector', category: 'Electronics', price: 350, image: 'https://images.pexels.com/photos/1841841/pexels-photo-1841841.jpeg?w=400&h=400&fit=crop', description: 'Tempered glass screen protector for phones', stock: 50, rating: 4.1 },
   { id: 10, name: 'Bed Sheets Set', category: 'Home Goods', price: 2500, image: 'https://images.pexels.com/photos/1034584/pexels-photo-1034584.jpeg?w=400&h=400&fit=crop', description: 'Soft cotton bed sheets set (Queen)', stock: 10, rating: 4.7 },
-  { id: 11, name: 'Stainless Steel Pot', category: 'Home Goods', price: 3800, image: 'https://images.pexels.com/photos/4253320/pexels-photo-4253320.jpeg?w=400&h=400&fit=crop', description: 'Durable 5L stainless steel cooking pot', stock: 7, rating: 4.5 },
+  { id: 11, name: 'Stainless Steel Pot', category: 'Home Goods', price: 3800, image: 'https://images.pexels.com/photos/6035337/pexels-photo-6035337.jpeg?w=400&h=400&fit=crop', description: 'Durable 5L stainless steel cooking pot', stock: 7, rating: 4.5 },
   { id: 12, name: 'Ceramic Mug Set', category: 'Home Goods', price: 1200, image: 'https://images.pexels.com/photos/1566308/pexels-photo-1566308.jpeg?w=400&h=400&fit=crop', description: 'Set of 4 ceramic coffee mugs', stock: 25, rating: 3.7 },
-  { id: 13, name: 'Kitchen Knife', category: 'Home Goods', price: 2200, image: 'https://images.pexels.com/photos/4226873/pexels-photo-4226873.jpeg?w=400&h=400&fit=crop', description: 'Professional 8-inch chef knife', stock: 9, rating: 4.6 },
+  { id: 13, name: 'Kitchen Knife', category: 'Home Goods', price: 2200, image: 'https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?w=400&h=400&fit=crop', description: 'Professional 8-inch chef knife', stock: 9, rating: 4.6 },
   { id: 14, name: 'Pillowcase (2pack)', category: 'Home Goods', price: 800, image: 'https://images.pexels.com/photos/6032280/pexels-photo-6032280.jpeg?w=400&h=400&fit=crop', description: 'Soft cotton pillowcases', stock: 32, rating: 4.2 },
 ];
 
