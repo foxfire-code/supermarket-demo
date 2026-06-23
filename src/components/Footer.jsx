@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">SuperMarket</h3>
+            <h3 className="text-xl font-bold mb-4">David's Supermarket</h3>
             <p className="text-gray-400 text-sm">Your trusted online supermarket for quality products delivered fast.</p>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; 2026 SuperMarket Demo. All rights reserved.</p>
+          <p>&copy; 2026 David's Supermarket Demo. All rights reserved.</p>
         </div>
       </div>
     </footer>

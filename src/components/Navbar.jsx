@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 font-bold text-xl">
             <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">🛒</div>
-            <span>SuperMarket</span>
+            <span>David's Supermarket</span>
           </Link>
 
           {/* Desktop Menu */}
