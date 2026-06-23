@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart, Menu, X, LogOut } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.svg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 font-bold text-xl">
-            <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">🛒</div>
+            <img src={logo} alt="David's Supermarket" className="w-10 h-10 rounded-full" />
             <span>David's Supermarket</span>
           </Link>
 
@@ -36,7 +37,6 @@ export default function Navbar() {
 
           {/* Right Side */}
           <div className="flex items-center space-x-6">
-            {/* Cart Icon */}
             <Link to="/cart" className="relative hover:text-accent transition">
               <ShoppingCart size={24} />
               {getCartCount() > 0 && (
@@ -46,15 +46,10 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* User Menu */}
             {user ? (
               <div className="flex items-center space-x-2">
                 <span className="text-sm">{user.fullName}</span>
-                <button
-                  onClick={handleLogout}
-                  className="hover:text-accent transition"
-                  title="Logout"
-                >
+                <button onClick={handleLogout} className="hover:text-accent transition" title="Logout">
                   <LogOut size={20} />
                 </button>
               </div>
@@ -64,8 +59,7 @@ export default function Navbar() {
               </Link>
             )}
 
-            {/* Mobile Menu Button */}
-            <button md:hidden onClick={toggleMenu} className="md:hidden">
+            <button onClick={toggleMenu} className="md:hidden">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -74,18 +68,10 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2">
-            <Link to="/" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>
-              Home
-            </Link>
-            <Link to="/products" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>
-              Products
-            </Link>
-            <Link to="/about" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>
-              About
-            </Link>
-            <Link to="/contact" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>
-              Contact
-            </Link>
+            <Link to="/" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/products" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>Products</Link>
+            <Link to="/about" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>About</Link>
+            <Link to="/contact" className="block py-2 hover:text-accent transition" onClick={() => setIsOpen(false)}>Contact</Link>
           </div>
         )}
       </div>
